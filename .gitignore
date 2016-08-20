@@ -18,3 +18,16 @@ df.registerTempTable('lol')
 
 #we can apply some sql statement on it
 sqlContext.sql("select outcome,count(*) from lol group by outcome").show()
+
+
+# convert data frame date column from string to date time and than take the minimum as well as maximum date 
+df1 = df.select('activity_id', df.date.cast('date'))
+>>> df1.agg({"date": "min"}).collect()
+[Row(min(date)=datetime.date(2022, 7, 17))]                                     
+>>> df1.agg({"date": "max"}).collect()
+[Row(max(date)=datetime.date(2023, 8, 31))]    
+
+
+
+
+
