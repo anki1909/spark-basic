@@ -10,3 +10,11 @@ df.show()
 
 #by default all columns in csv file read as String columns so first need to convert them in specified format
 df1 = df.select('activity_id', df.outcome.cast('float').alias('price'))
+
+
+
+#We can create a table from the dataframe if we have good knowladge in sql
+df.registerTempTable('lol')
+
+#we can apply some sql statement on it
+sqlContext.sql("select outcome,count(*) from lol group by outcome").show()
