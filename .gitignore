@@ -4,7 +4,8 @@ python note book
 $/bin/pyspark --packages com.databricks:spark-csv_2.10:1.3.0
 from pyspark.sql import SQLContext
 sqlContext = SQLContext(sc)
-df = sqlContext.load(source="com.databricks.spark.csv", path = '/home/ankit/ML/sample_submission.csv')
+# inferschema is use for autometically detect the columns type.
+df = sqlContext.load(source="com.databricks.spark.csv", path = '/home/ankit/ML/sample_submission.csv', header = True,inferSchema = True)
 df.show()
 
 
