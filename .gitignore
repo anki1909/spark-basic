@@ -1,5 +1,9 @@
 python note book
 #PYSPARK_DRIVER_PYTHON=ipython /bin/pyspark --packages com.databricks:spark-csv_2.10:1.3.0
+#./bin/pyspark --packages graphframes:graphframes:0.2.0-spark2.0-s_2.11
+
+
+
 # directory change to bin
 $/bin/pyspark --packages com.databricks:spark-csv_2.10:1.3.0
 from pyspark.sql import SQLContext
